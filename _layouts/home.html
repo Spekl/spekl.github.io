@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include header.html  %}
+
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/markdown.min.js"></script>
+  
+  </head> 
+  
+  <body>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" ng-app="OpenJML" style="background-color: #FFF;">
+      <div class="container" ng-controller="LilVerifyCtrl" >
+	<div class="row"> 
+	  <div class="col-md-5">
+	    <img src="/images/logo.png" width="450"/>
+	    
+	  </div>
+	  <div class="col-md-7"  id="codePreview">
+
+	    <h1>Spekl is a Tool for Making Better Software</h1> 
+            <p>Specifications, Static checkers, Runtime Assertion Checkers, SMT-solvers &mdash; these tools can be used to make your softare better. Spekl is a platform for making the authoring of Specifications easier and the usage of Formal Methods tools easier.</p>
+
+	    <div align="center"> 
+	      <p><a class="btn btn-success btn-lg" href="https://github.com/jsinglet/spekl-package-manager/releases" role="button">Download Spekl (Windows, Linux, & Mac)</a></p>
+	    </div> 
+	  </div>
+	</div>
+      </div>  
+    </div>     
+ 
+    <div class="container">
+      {{ content }}
+      <hr>
+      <footer>
+	<p>&copy; 2015 &mdash; OpenJML.org &middot; This work was supported by the US National Science Foundation under grant CCF0916350</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    {% include script-footer.html %}
+  </body>
+</html>
+
