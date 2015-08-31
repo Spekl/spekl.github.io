@@ -288,4 +288,4 @@ Since OpenJML didn't emit any errors, it means that the code we wrote satisfies 
 Next Steps
 ==========
 
-This is just a sample of the many things you can do with Spekl. As a user of Spekl most of your work will consist of adding and running checks. To browse some of the available checks, head over to the recipes section, here: :ref:`sec-recipes`.
+This is just a sample of the many things you can do with Spekl. As a user of Spekl most of your work will consist of adding and running checks. To browse some of the available checks, head over to the recipes section, here: :ref:`sec-recipes`
