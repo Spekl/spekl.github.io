@@ -25,7 +25,7 @@ Contents:
 
    creating_applications     
 
-.. _testing_applications:
+.. _tool_authors_guide:
 
 .. toctree::
    :maxdepth: 2
@@ -34,7 +34,7 @@ Contents:
    testing_applications
 
 
-.. _deploying_applications:
+.. _spec_authors_guide:
 
 .. toctree::
    :maxdepth: 2

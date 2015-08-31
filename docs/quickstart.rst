@@ -57,8 +57,10 @@ To start, create a new directory you want to store this example in::
 
 Next, initialize the project in that directory. You can do this with
 the ``spm init`` command. This command is interactive but for this
-example we are going to just accept the defaults ``spm init`` uses::
+example we are going to just accept the defaults ``spm init`` uses.
 
+.. code-block:: yaml
+		
   ~ » spm init
   [spm] INFO  - [command-init]
   [spm] INFO  - [new-project] Creating new verification project...
@@ -105,8 +107,10 @@ example we are going to just accept the defaults ``spm init`` uses::
 
 This command creates a file called ``spekl.yml`` in the directory you
 execute ``spm init`` in. Edit that file to look like the listing,
-below::
+below.
 
+.. code-block:: yaml
+  
   #
   # Basic Project Information
   #
@@ -147,8 +151,42 @@ contain wildcards. You use this to specify the files you want to run a
 given check on.
 
 Next, put the following text into the file ``MaybeAdd.java`` in the
-current directory::
-  
+current directory
+
+.. code-block:: java
+
+  public class MaybeAdd {
+
+    //@ requires 0 < a && a < Integer.MAX_VALUE/2;
+    //@ requires 0 < b && b < Integer.MAX_VALUE/2;
+    //@ ensures  0 < \result;
+    public static int add(int a, int b){
+	return a-b;
+    }
+
+    
+    public static void main(String args[]){
+
+	System.out.println(MaybeAdd.add(1,2));
+
+    }
+
+  }
+
+
+In this minimal class you can see that we wrote a minimal example that
+(wrongly) adds two integers. Let's see what happens when we run this
+example with Spekl. To do that, first let's tell Spekl to install our tools::
+
+  ~ » spm install
+
+This command will kick off an installation process that will install
+``z3``, ``openjml``, and ``openjml-esc``. 
+
+After that completes, we can run a check with the following command::
+
+  ~ » spm check
+
 
 The Verily installer comes with everything you need to start writing
 applications in Verily right away. To start, download the latest
