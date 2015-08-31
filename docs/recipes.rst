@@ -29,6 +29,18 @@ Runtime Assertion Checking
 Extended Static Checking
 ------------------------
 
+.. code-block:: yaml
+		
+  checks :
+    - name        : openjml-esc
+      description : "OpenJML Extended Static Checking"
+      paths       : [A.java]  # your source files
+      classpath   : []        # classpath needed to compile your project
+  
+      tool:
+        name      : openjml-esc
+
+
 FindBugs
 ========
 
