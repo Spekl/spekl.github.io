@@ -157,8 +157,8 @@ current directory
 
   public class MaybeAdd {
 
-    //@ requires 0 < a && a < Integer.MAX_VALUE/2;
-    //@ requires 0 < b && b < Integer.MAX_VALUE/2;
+    //@ requires 0 < a && a < 1000;
+    //@ requires 0 < b && b < 1000;
     //@ ensures  0 < \result;
     public static int add(int a, int b){
 	return a-b;
@@ -181,186 +181,111 @@ example with Spekl. To do that, first let's tell Spekl to install our tools::
   ~ » spm install
 
 This command will kick off an installation process that will install
-``z3``, ``openjml``, and ``openjml-esc``. 
+``z3``, ``openjml``, and ``openjml-esc``. The output will look like the following::
+
+  [spm] INFO  - [command-install] Finding package openjml-esc in remote repository
+  [spm] INFO  - [command-install] Starting install of package openjml-esc (version: 1.7.3.20150406-5)
+  [spm] INFO  - [command-install] Examining dependencies...
+  [spm] INFO  - [command-install] Will install the following missing packages:
+  [spm] INFO  - [command-install] -  openjml (version: >= 1.7.3 && < 1.8)
+  [spm] INFO  - [command-install] -  z3 (version: >= 4.3.0 && < 4.3.1)
+  [spm] INFO  - [command-install] Finding package openjml in remote repository
+  [spm] INFO  - [command-install] Starting install of package openjml (version: 1.7.3.20150406-1)
+  [spm] INFO  - [command-install] Examining dependencies...
+  [spm] INFO  - [command-install] Installing package openjml (version: 1.7.3.20150406-1)
+  [spm] INFO  - [command-install] Downloading Required Assets...
+  openjml-dist         : [==================================================] 100%
+  [spm] INFO  - [command-install] Running package-specific installation commands
+  [spm] INFO  - [command-install-scripts]  Unpacking the archive...
+  [spm] INFO  - [command-install] Performing cleanup tasks...
+  [spm] INFO  - [command-install] Cleaning up resources for asset  openjml-dist
+  [spm] INFO  - [command-install] Writing out package description...
+  [spm] INFO  - [command-install] Completed installation of package openjml (version: 1.7.3.20150406-1)
+  [spm] INFO  - [command-install] Finding package z3 in remote repository
+  [spm] INFO  - [command-install] Starting install of package z3 (version: 4.3.0-2)
+  [spm] INFO  - [command-install] Examining dependencies...
+  [spm] INFO  - [command-install] Installing package z3 (version: 4.3.0-2)
+  [spm] INFO  - [command-install] Downloading Required Assets...
+  Z3 Binaries for Windows : [==================================================] 100%
+  [spm] INFO  - [command-install] Running package-specific installation commands
+  [spm] INFO  - [command-install-scripts]  Unpacking Z3...
+  [spm] INFO  - [command-install] Performing cleanup tasks...
+  [spm] INFO  - [command-install] Cleaning up resources for asset  Z3 Binaries for Windows
+  [spm] INFO  - [command-install] Writing out package description...
+  [spm] INFO  - [command-install] Completed installation of package z3 (version: 4.3.0-2)
+  [spm] INFO  - [command-install] Installing package openjml-esc (version: 1.7.3.20150406-5)
+  [spm] INFO  - [command-install] Downloading Required Assets...
+  [spm] INFO  - [command-install] Running package-specific installation commands
+  [spm] INFO  - [command-install] Performing cleanup tasks...
+  [spm] INFO  - [command-install] Writing out package description...
+  [spm] INFO  - [command-install] Completed installation of package openjml-esc (version: 1.7.3.20150406-5)
+  [spm] INFO  - [command-install] Installing specs....
+  [spm] INFO  - [command-install] Done. Use `spm check` to check your project.
+
+  
 
 After that completes, we can run a check with the following command::
 
   ~ » spm check
 
+The output from the check will look like the following::
 
-The Verily installer comes with everything you need to start writing
-applications in Verily right away. To start, download the latest
-installer from the   `releases page <https://github.com/jsinglet/Verily/releases>`_. Verily requires that you have a Java version 1.7+ and a recent version of Maven 3. 
-
-On Windows platforms, you can install Verily simply by running the downloaded JAR file. On other platforms (Linux and Mac) you will have to start the Verily installer via the command line as follows::
-
-~ » sudo java -jar verily-<release>.jar
-
-Where ``release`` is the release version of Verily that you downloaded, above.
-
-Once Verily is installed, you can interact with it in a number of ways. The first (and perhaps most simple) is to interact with Verily on the command line. After installing Verily, the ``verily`` executable will be available on your system's ``PATH``. The command options of Verily are summed up in the listing below::
-
-  ~ » verily -help                                                                                                               
-  usage: verily
-   -contracts           enable checking of contracts
-   -d                   run this application in the background
-   -fast                do not recalculate dependencies before running
-   -help                display this help
-   -init <dir>          create a new Verily application in the specified
-			directory
-   -jml <path-to-jml>   the path to the OpenJML installation directory.
-   -n <threads>         the number of threads to create for handling
-			requests.
-   -new <newclass>      create a new Verily Method+Router pair
-   -nocompile           do not do internal recompile (used for development
-			only)
-   -nostatic            disables extended static checking
-   -port <portnumber>   port number to bind to (default 8000)
-   -run                 run the application
-   -test                run the unit tests for this application
-   -w                   try to dynamically reload classes and templates (not
-			for production use)
-   -z3 <path-to-z3>     the path to the Z3 installation directory.
-
-
-While an IDE is not strictly necessary to work with Verily, if you are an IntelliJ user, you can use our simple VerilyIdea Plugin for IntelliJ. You can also get the plugin from the [main page](/). 
-
-
-Hello World in Verily
-=====================
-
-In this section we are going to construct the most minimal version of a Verily application possible: the so-called "Hello World" application. To begin, make sure you have already installed Verily and run the following command on the command prompt from the directory in which you'd like to create your project::
-
-  ~/Projects » verily -init HelloWorld                                                                                           
-  [INFO] Creating directory hierarchy...
-  [INFO] Done.
-  [INFO] Initializing Maven POM...
-  [INFO] Done. Execute "verily -run" from inside your new project directory to run this project.
-
-
-After this command completes, you will have a new directory called ``HelloWorld`` in your current working directory. 
-
-Next, change to the newly-created directory and create a new Verily Method with the ``-new`` command::
-
-  ~/Projects » cd HelloWorld 
-  ~/Projects/HelloWorld » verily -new Hello                                                                                      
-  [INFO] Creating a new Method/Router pair...
-  [INFO] Method/Router Pair Created. You can find the files created in the following locations:
-  [INFO] M: src/main/java/methods/Hello.java
-  [INFO] R: src/main/java/routers/Hello.java
-  [INFO] T: src/test/java/HelloTest.java
-
-
-Note that in addition to a Verily Method, a corresponding router and unit test is also created for you. We'll get to that in a moment. 
-
-Writing Your Method
--------------------
-
-After creating your new method/router pair, you should see the following in the ``src/main/java/methods/Hello.java`` file:
-
-.. code-block:: java
+  [spm] INFO  - [command-check] Running all checks for project...
+  [spm] INFO  - [command-check] Running check: OpenJML All File ESC
+  [spm] INFO  - Configuring solver for Z3...
+  [spm] INFO  - Running OpenJML in ESC Mode...
   
-  package methods;
-
-  import verily.lang.*;
-
-  public class Hello {
-
-       public static final void myFunction(ReadableValue<String> message){
-	    // TODO - Write your application
-       }
-  }
- 
-This class corresponds to a Verily method class. There are several ways to make our example say "Hello World," and as you learn more about Verily you will find other methods, but for the moment we will do this by transforming the class in the following way:
-
-.. code-block:: java
-
-  package methods;
-
-  import verily.lang.*;
-
-  public class Hello {
-
-       public static final String sayHello(){
-		return "Hello World";
-       }
-  }
-
-The thing to note here is the return type of the method ``sayHello``. You'll notice that it's a return type of type ``String``. This value will then be passed as a formal parameter to your router.
-
-Writing Your Router
--------------------
-
-To write the corresponding router you will want to replace the generated router in your ``src/main/java/routers/Hello.java`` with the code in the following listing:
-
-.. code-block:: java
+  .\MaybeAdd.java:7: warning: The prover cannot establish an assertion (Postcondition: .\MaybeAdd.java:5: ) in method add
+          return a-b;
+          ^
+  .\MaybeAdd.java:5: warning: Associated declaration: .\MaybeAdd.java:7:
+      //@ ensures  0 < \result;
+          ^
+  .\MaybeAdd.java:13: warning: The prover cannot establish an assertion (Precondition: .\MaybeAdd.java:3: ) in method main
+          System.out.println(MaybeAdd.add(1,2));
+                                         ^
+  .\MaybeAdd.java:3: warning: Associated declaration: .\MaybeAdd.java:13:
+      //@ requires 0 < a && a < 1000;
+          ^
+  4 warnings
   
-  package routers;
 
-  import verily.lang.*;
+As you can see in the output above, the extended static checker has correctly detected that our implementation did not satisfy the specification. Let's fix that. To do that, replace the ``-`` operation in the ``MaybeAdd`` class with ``+``. Your listing should look like the following:
 
-  public class Hello {
+.. code-block:: java
 
+  public class MaybeAdd {
 
-      public static final Content sayHello(String result) {
-	       return new TextContent(result);
-      }
+    //@ requires 0 < a && a < 1000;
+    //@ requires 0 < b && b < 1000;
+    //@ ensures  0 < \result;
+    public static int add(int a, int b){
+	return a+b;
+    }
 
+    
+    public static void main(String args[]){
+
+	System.out.println(MaybeAdd.add(1,2));
+
+    }
 
   }
 
-In the router, above, we have created the sayHello function. After the method class (``methods.Hello.sayHello``) executes, control will be passed to the ``routers.Hello.sayHello`` function. Note that the actual parameter value of the router method will be the return value of the ``methods.Hello.sayHello``.
+Let's see if this works now::
 
-The control flow of a Verily application looks like the application flow given in the following diagram. 
+  ~ » spm check
 
+The output from the check will look like the following::
 
-Running Your Application
-------------------------
+  [spm] INFO  - [command-check] Running all checks for project...
+  [spm] INFO  - [command-check] Running check: OpenJML All File ESC
+  [spm] INFO  - Configuring solver for Z3...
+  [spm] INFO  - Running OpenJML in ESC Mode...
 
-Once you have at least one method/router pair set up, you are ready to run your web application. To do this, use the ``-run`` option of Verily. The output below has been somewhat elided in order to highlight some of the important startup messages Verily will create::
-
-  ~/Projects/HelloWorld » verily -run
-  [INFO] Scanning for projects...
-  [INFO] Bootstrapping Verily on port 8000...
-  [INFO] Constructed new Verily container @ Sun Jun 08 11:44:24 EDT 2014
-  [INFO] Created new thread pool with [10] threads.
-  [INFO] Starting Verily container...
-  [INFO] The Following MRR Endpoints Are Available in Your Application:
-  [INFO] +----------------------+---------+-----------------+
-  [INFO] | ENDPOINT             | METHOD SPEC | VERBS           |
-  [INFO] +----------------------+---------+-----------------+
-  [INFO] | /Hello/sayHello      | ()      | [POST, GET]     |
-  [INFO] +----------------------+---------+-----------------+
-  [INFO] [verily] Reloading project...
-  [INFO] Starting services...
-  [INFO] ------------------------------------------------------------------------
-  [INFO] Verily STARTUP COMPLETE
-  [INFO] ------------------------------------------------------------------------
-  [INFO] Bootstrapping complete in 4.134 seconds. Verily ready to serve requests at http://localhost:8000/
-
-Perhaps the most conceptually most important aspect of the above output is the MRR table, which has been excerpted, below::
-
-  [INFO] The Following MRR Endpoints Are Available in Your Application:
-  [INFO] +----------------------+-------------+-------------+
-  [INFO] | ENDPOINT             | METHOD SPEC | VERBS       |
-  [INFO] +----------------------+-------------+-------------+
-  [INFO] | /Hello/sayHello      | ()          | [POST, GET] |
-  [INFO] +----------------------+-------------+-------------+
-
-The table printed above gives us several pieces of information about our small application:
-
-* First, we know that there is exactly one application endpoint available. 
-* The endpoint that is available maps to our ``sayHello`` method at the URL ``/Hello/sayHello``.
-* The ``sayHello`` method has no formal parameters, thus we should not expect to supply any in the request URI. 
-* The ``sayHello`` method is available for either ``POST`` or ``GET`` requests. 
-
-To execute this method, point your web browser at: ``http://localhost:8000/Hello/sayHello``. Your web browser should render something similar to the figure, below:
-
-
-.. image:: images/hello-world.png
-
+Since OpenJML didn't emit any errors, it means that the code we wrote satisfies the specifications.
 
 Next Steps
 ==========
 
-In this quick start we've only just scratched the surface of Verily. If you'd like to start using the more advanced facilities of Verily to be more reliable web applications, please take a look at the rest of the documentation.
+This is just a sample of the many things you can do with Spekl. As a user of Spekl most of your work will consist of adding and running checks. To browse some of the available checks, head over to the recipes section, here: :ref:`sec-recipes`.

@@ -23,34 +23,20 @@ Contents:
    :maxdepth: 2
    :caption: Spekl Recipes
 
-   creating_applications     
+   recipes
 
 .. _tool_authors_guide:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Testing Applications
-
-   testing_applications
+   :caption: Tool Authoring Guide
 
 
 .. _spec_authors_guide:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Deploying Applications
-
-   deploying_applications     
-
-
-   
-.. _verifying_applications:
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Verfiying Applications
-
-   verifying_applications     
+   :caption: Spec Authoring Guide   
    
 
 Indices and tables
