@@ -25,7 +25,7 @@ More About this Tool:
 Runtime Assertion Checking
 --------------------------
 
-Runtime Assertion Checking work by first compiling your program and then running it with the assertions added to your program. The listing below shows both checks configured. Note that the jml-java-7 specs have been configured. 
+Runtime Assertion Checking works by first compiling your program and then running it with the assertions added to your program. The listing below shows both checks configured. Note that the jml-java-7 specs have been configured. 
 
 .. code-block:: yaml
 
