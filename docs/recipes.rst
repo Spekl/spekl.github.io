@@ -154,6 +154,41 @@ More About this Tool:
 Nullness Checker
 ----------------
 
+Note that this checker supports an optional ``classpath`` element, which is a list of paths to add to the classpath. Also, if you do not want your class files written to the same directory in which they reside, you may use the ``out`` option to specify an output directory. Note that it must exist before running ``spm check``. 
+
+See the `Nullness Checker Documentation <http://types.cs.washington.edu/checker-framework/current/checker-framework-manual.html#nullness-checker>`_
+
+.. code-block:: yaml
+
+  checks :                                                                                                 
+    - name        : checker-framework-nullness
+      check       : nullness
+      description : "Checker Framework Nullness Check"                                                                 
+      paths       : [MaybeAdd.java]                                                                        
+                                                                                                           
+      tool:                                                                                                
+        name      : checker-framework                                                                            
+  
+
+
+Interning Checker
+-----------------
+
+Note that this checker supports an optional ``classpath`` element, which is a list of paths to add to the classpath. Also, if you do not want your class files written to the same directory in which they reside, you may use the ``out`` option to specify an output directory. Note that it must exist before running ``spm check``. 
+
+See the `Interning Checker Documentation <http://types.cs.washington.edu/checker-framework/current/checker-framework-manual.html#interning-checker>`_
+
+.. code-block:: yaml
+
+  checks :                                                                                                 
+    - name        : checker-framework-interning
+      check       : interning
+      description : "Checker Framework Interning Check"                                                                 
+      paths       : [MaybeAdd.java]                                                                        
+                                                                                                           
+      tool:                                                                                                
+        name      : checker-framework                                                                            
+  		
 
 
 
