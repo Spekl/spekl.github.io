@@ -25,7 +25,7 @@ More About this Tool:
 Runtime Assertion Checking
 --------------------------
 
-Runtime Assertion Checking works by first compiling your program and then running it with the assertions added to your program. The listing below shows both checks configured. Note that the jml-java-7 specs have been configured. 
+Runtime Assertion Checking works by first compiling your program and then running it with the assertions added to your program. The listing below shows both checks configured. Note that the jml-java-7 specs have been configured. In the example below, we output all of the compiled classes to the ``out`` directory. This directory can be any directory you like, just make sure it exists before running ``spm check``.
 
 .. code-block:: yaml
 
