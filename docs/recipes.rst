@@ -25,6 +25,34 @@ More About this Tool:
 Runtime Assertion Checking
 --------------------------
 
+Runtime Assertion Checking work by first compiling your program and then running it with the assertions added to your program. The listing below shows both checks configured. Note that the jml-java-7 specs have been configured. 
+
+.. code-block:: yaml
+
+  checks :                                                                                                 
+  - name        : openjml-rac-compile                                                                            
+    description : "OpenJML All File RAC Compile"                                                                 
+    check       : rac-compile
+    paths       : [MaybeAdd.java]                                                                        
+    classpath   : []
+    out         : out       # the compile output directory
+    tool:                                                                                                
+      name      : openjml-rac                                                                            
+
+    specs:                                                                                             
+      - name: jml-java-7                                                                                
+
+  - name        : openjml-rac-run                                                                            
+    description : "OpenJML All File RAC Check"
+    check       : rac-check
+    main        : MaybeAdd  # your main class
+    paths       : [MaybeAdd.java]                                                                        
+    classpath   : []
+    out         : out       # the compile output directory
+    tool:                                                                                                
+      name      : openjml-rac                                                                            
+
+
 
 Extended Static Checking
 ------------------------
