@@ -29,44 +29,29 @@ Runtime Assertion Checking works by first compiling your program and then runnin
 
 .. code-block:: yaml
 
-  checks :                                                                                                 
-  - name        : openjml-rac-compile                                                                            
-    description : "OpenJML All File RAC Compile"                                                                 
+checks :
+  - name        : openjml-rac-compile
+    description : "OpenJML All File RAC Compile"
     check       : rac-compile
-    paths       : [MaybeAdd.java]                                                                        
+    paths       : [MaybeAdd.java]
     classpath   : []
     out         : out       # the compile output directory
-    tool:                                                                                                
-      name      : openjml-rac                                                                            
+    tool:
+      name      : openjml-rac
+      
+    specs:
+      - name: jml-java-7
 
-    specs:                                                                                             
-      - name: jml-java-7                                                                                
-
-  - name        : openjml-rac-run                                                                            
+  - name        : openjml-rac-run
     description : "OpenJML All File RAC Check"
     check       : rac-check
     main        : MaybeAdd  # your main class
-    paths       : [MaybeAdd.java]                                                                        
+    paths       : [MaybeAdd.java]
     classpath   : []
     out         : out       # the compile output directory
-    tool:                                                                                                
-      name      : openjml-rac                                                                            
+    tool:
+      name      : openjml-rac
 
-
-
-Extended Static Checking
-------------------------
-
-.. code-block:: yaml
-		
-  checks :
-    - name        : openjml-esc
-      description : "OpenJML Extended Static Checking"
-      paths       : [A.java]  # your source files
-      classpath   : []        # classpath needed to compile your project
-  
-      tool:
-        name      : openjml-esc
 
 
 FindBugs
