@@ -29,29 +29,31 @@ Runtime Assertion Checking works by first compiling your program and then runnin
 
 .. code-block:: yaml
 
-checks :
-  - name        : openjml-rac-compile
-    description : "OpenJML All File RAC Compile"
-    check       : rac-compile
-    paths       : [MaybeAdd.java]
-    classpath   : []
-    out         : out       # the compile output directory
-    tool:
-      name      : openjml-rac
+  checks :
+    - name        : openjml-rac-compile
+      description : "OpenJML All File RAC Compile"
+      check       : rac-compile
+      paths       : [MaybeAdd.java]
+      classpath   : []
+      out         : out       # the compile output directory
+
+      tool:
+        name      : openjml-rac
+        
+      specs:
+        - name: jml-java-7
+  
+    - name        : openjml-rac-run
+      description : "OpenJML All File RAC Check"
+      check       : rac-check
+      main        : MaybeAdd  # your main class
+      paths       : [MaybeAdd.java]
+      classpath   : []
+      out         : out       # the compile output directory
       
-    specs:
-      - name: jml-java-7
-
-  - name        : openjml-rac-run
-    description : "OpenJML All File RAC Check"
-    check       : rac-check
-    main        : MaybeAdd  # your main class
-    paths       : [MaybeAdd.java]
-    classpath   : []
-    out         : out       # the compile output directory
-    tool:
-      name      : openjml-rac
-
+      tool:
+        name      : openjml-rac
+  
 
 
 FindBugs
