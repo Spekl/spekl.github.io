@@ -36,7 +36,9 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Spec Authoring Guide   
+   :caption: Spec Authoring Guide
+
+   spec_guide
    
 
 Indices and tables
