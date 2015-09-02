@@ -76,6 +76,26 @@ check``.
   
 
 
+Extended Static Checking
+------------------------
+Extended Static Checking is much more extensive in the types of errors
+it can catch but is also generally harder to write specifications
+for. Like the Runtime Assertion Checker, this check supports a
+``classpath`` attribute that you can use to add classpath elements
+needed to resolve all the classes in your project. 
+
+.. code-block:: yaml
+  checks :                                                                                                 
+    - name        : openjml-esc                                                                            
+      description : "OpenJML All File ESC"                                                                 
+      paths       : [MaybeAdd.java]                                                                        
+                                                                                                           
+      tool:                                                                                                
+        name      : openjml-esc                                                                            
+
+
+
+
 FindBugs
 ========
 
