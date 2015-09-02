@@ -85,6 +85,7 @@ for. Like the Runtime Assertion Checker, this check supports a
 needed to resolve all the classes in your project. 
 
 .. code-block:: yaml
+		
   checks :                                                                                                 
     - name        : openjml-esc                                                                            
       description : "OpenJML All File ESC"                                                                 
