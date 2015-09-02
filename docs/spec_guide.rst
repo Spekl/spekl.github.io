@@ -98,9 +98,19 @@ continue working on this project by editing and doing a ``spm
 publish`` at any time. Every time you publish, however, make sure to
 increment the version number in your ``package.yml`` file. If you
 don't Spekl will not allow you to publish.
+
   
 Authoring Inline Specifications
 ===============================
+
+In the last section we learned how to create stand alone
+specifications. While this is the authoring mode most useful for
+projects wishing to import existing specifications into Spekl, the
+more general case for using Spekl is when one wants to author
+specifications for a codebase that is under development. In this
+section we are going to learn how to do that. We'll continue with the
+example we've used in other sections, the ``MaybeAdd`` example.
+
 
 Publishing Specifications
 =========================
