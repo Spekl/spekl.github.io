@@ -250,7 +250,11 @@ The output from the check will look like the following::
   4 warnings
   
 
-As you can see in the output above, the extended static checker has correctly detected that our implementation did not satisfy the specification. Let's fix that. To do that, replace the ``-`` operation in the ``MaybeAdd`` class with ``+``. Your listing should look like the following:
+As you can see in the output above, the extended static checker has
+correctly detected that our implementation did not satisfy the
+specification. Let's fix that. To do that, replace the ``-`` operation
+in the ``MaybeAdd`` class with ``+``. Your listing should look like
+the following:
 
 .. code-block:: java
 
@@ -283,9 +287,13 @@ The output from the check will look like the following::
   [spm] INFO  - Configuring solver for Z3...
   [spm] INFO  - Running OpenJML in ESC Mode...
 
-Since OpenJML didn't emit any errors, it means that the code we wrote satisfies the specifications.
+Since OpenJML didn't emit any errors, it means that the code we wrote
+satisfies the specifications.
 
 Next Steps
 ==========
 
-This is just a sample of the many things you can do with Spekl. As a user of Spekl most of your work will consist of adding and running checks. To browse some of the available checks, head over to the recipes section, here: :ref:`sec-recipes`
+This is just a sample of the many things you can do with Spekl. As a
+user of Spekl most of your work will consist of adding and running
+checks. To browse some of the available checks, head over to the
+recipes section, here: :ref:`sec-recipes`

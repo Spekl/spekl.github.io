@@ -3,7 +3,10 @@
 What are Spekl Recipes?
 ======================
 
-Spekl makes it easy to drop in new verification checks into your projects. To that end we've created an easy to use reference of available checks in Spekl we call "Recipes." Browse the sections below to find out the kinds of checks you can add to your programs. 
+Spekl makes it easy to drop in new verification checks into your
+projects. To that end we've created an easy to use reference of
+available checks in Spekl we call "Recipes." Browse the sections below
+to find out the kinds of checks you can add to your programs.
 
 
 OpenJML
@@ -13,9 +16,20 @@ OpenJML
 	   :align: right
 
 
-OpenJML is a suite of tools for editing, parsing, type-checking, verifying (static checking), and run-time checking Java programs that are annotated with JML statements stating what the program's methods are supposed to do and the invariants the data structures should obey. JML annotations state preconditions, postconditions, invariants and the like about a method or class; OpenJML's tools will then check that the implementation and the specifications are consistent.
+OpenJML is a suite of tools for editing, parsing, type-checking,
+verifying (static checking), and run-time checking Java programs that
+are annotated with JML statements stating what the program's methods
+are supposed to do and the invariants the data structures should
+obey. JML annotations state preconditions, postconditions, invariants
+and the like about a method or class; OpenJML's tools will then check
+that the implementation and the specifications are consistent.
 
-The Java Modeling Language (JML) is a behavioral interface specification language (BISL) that can be used to specify the behavior of Java modules. It combines the design by contract approach of Eiffel and the model-based specification approach of the Larch family of interface specification languages, with some elements of the refinement calculus.
+The Java Modeling Language (JML) is a behavioral interface
+specification language (BISL) that can be used to specify the behavior
+of Java modules. It combines the design by contract approach of Eiffel
+and the model-based specification approach of the Larch family of
+interface specification languages, with some elements of the
+refinement calculus.
 
 More About this Tool:
 
@@ -25,7 +39,13 @@ More About this Tool:
 Runtime Assertion Checking
 --------------------------
 
-Runtime Assertion Checking works by first compiling your program and then running it with the assertions added to your program. The listing below shows both checks configured. Note that the jml-java-7 specs have been configured. In the example below, we output all of the compiled classes to the ``out`` directory. This directory can be any directory you like, just make sure it exists before running ``spm check``.
+Runtime Assertion Checking works by first compiling your program and
+then running it with the assertions added to your program. The listing
+below shows both checks configured. Note that the jml-java-7 specs
+have been configured. In the example below, we output all of the
+compiled classes to the ``out`` directory. This directory can be any
+directory you like, just make sure it exists before running ``spm
+check``.
 
 .. code-block:: yaml
 
@@ -63,7 +83,17 @@ FindBugs
 	   :align: right
 		   
 
-FindBugs uses static analysis to inspect Java bytecode for occurrences of bug patterns.  Static analysis means that FindBugs can find bugs by simply inspecting a program's code: executing the program is not necessary.  This makes FindBugs very easy to use: in general, you should be able to use it to look for bugs in your code within a few minutes of downloading it.  FindBugs works by analyzing Java bytecode (compiled class files), so you don't even need the program's source code to use it.  Because its analysis is sometimes imprecise, FindBugs can report false warnings, which are warnings that do not indicate real errors.  In practice, the rate of false warnings reported by FindBugs is less than 50%.
+FindBugs uses static analysis to inspect Java bytecode for occurrences
+of bug patterns.  Static analysis means that FindBugs can find bugs by
+simply inspecting a program's code: executing the program is not
+necessary.  This makes FindBugs very easy to use: in general, you
+should be able to use it to look for bugs in your code within a few
+minutes of downloading it.  FindBugs works by analyzing Java bytecode
+(compiled class files), so you don't even need the program's source
+code to use it.  Because its analysis is sometimes imprecise, FindBugs
+can report false warnings, which are warnings that do not indicate
+real errors.  In practice, the rate of false warnings reported by
+FindBugs is less than 50%.
 
 More About this Tool:
 
@@ -105,7 +135,11 @@ Run FindBugs and Generate XML Reports
 SAW
 ===
 
-The Software Analysis Workbench (SAW) provides the ability to formally verify properties of code written in C, Java, and Cryptol. It leverages automated SAT and SMT solvers to make this process as automated as possible, and provides a scripting language, called SAW Script, to enable verification to scale up to more complex systems.
+The Software Analysis Workbench (SAW) provides the ability to formally
+verify properties of code written in C, Java, and Cryptol. It
+leverages automated SAT and SMT solvers to make this process as
+automated as possible, and provides a scripting language, called SAW
+Script, to enable verification to scale up to more complex systems.
 
 More About this Tool:
 
@@ -142,9 +176,15 @@ Checker Framework
 	   :align: right
 
 
-Are you tired of null pointer exceptions, unintended side effects, SQL injections, concurrency errors, mistaken equality tests, and other run-time errors that appear during testing or in the field?
+Are you tired of null pointer exceptions, unintended side effects, SQL
+injections, concurrency errors, mistaken equality tests, and other
+run-time errors that appear during testing or in the field?
 
-The Checker Framework enhances Java’s type system to make it more powerful and useful. This lets software developers detect and prevent errors in their Java programs. The Checker Framework includes compiler plug-ins ("checkers") that find bugs or verify their absence. It also permits you to write your own compiler plug-ins.
+The Checker Framework enhances Java’s type system to make it more
+powerful and useful. This lets software developers detect and prevent
+errors in their Java programs. The Checker Framework includes compiler
+plug-ins ("checkers") that find bugs or verify their absence. It also
+permits you to write your own compiler plug-ins.
 
 More About this Tool:
 
@@ -154,7 +194,11 @@ More About this Tool:
 Nullness Checker
 ----------------
 
-Note that this checker supports an optional ``classpath`` element, which is a list of paths to add to the classpath. Also, if you do not want your class files written to the same directory in which they reside, you may use the ``out`` option to specify an output directory. Note that it must exist before running ``spm check``. 
+Note that this checker supports an optional ``classpath`` element,
+which is a list of paths to add to the classpath. Also, if you do not
+want your class files written to the same directory in which they
+reside, you may use the ``out`` option to specify an output
+directory. Note that it must exist before running ``spm check``.
 
 See the `Nullness Checker Documentation <http://types.cs.washington.edu/checker-framework/current/checker-framework-manual.html#nullness-checker>`_
 
@@ -174,7 +218,11 @@ See the `Nullness Checker Documentation <http://types.cs.washington.edu/checker-
 Interning Checker
 -----------------
 
-Note that this checker supports an optional ``classpath`` element, which is a list of paths to add to the classpath. Also, if you do not want your class files written to the same directory in which they reside, you may use the ``out`` option to specify an output directory. Note that it must exist before running ``spm check``. 
+Note that this checker supports an optional ``classpath`` element,
+which is a list of paths to add to the classpath. Also, if you do not
+want your class files written to the same directory in which they
+reside, you may use the ``out`` option to specify an output
+directory. Note that it must exist before running ``spm check``.
 
 See the `Interning Checker Documentation <http://types.cs.washington.edu/checker-framework/current/checker-framework-manual.html#interning-checker>`_
 
