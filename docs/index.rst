@@ -31,6 +31,7 @@ Contents:
    :maxdepth: 2
    :caption: Tool Authoring Guide
 
+   tool_guide
 
 .. _spec_authors_guide:
 
@@ -39,7 +40,15 @@ Contents:
    :caption: Spec Authoring Guide
 
    spec_guide
-   
+
+.. _faq:
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Frequently Asked Questions
+
+   faq
+	     
 
 Indices and tables
 ==================
