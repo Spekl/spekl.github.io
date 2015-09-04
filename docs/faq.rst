@@ -43,4 +43,21 @@ you want to use for authentication.
 
 How Do I Update My Specs/Tools After I Publish Them?
 ----------------------------------------------------
+If you still have the local directory you created the project in you
+can just use your normal ``spm publish`` commands.
 
+If you are on a different machine (or you'd like to give access to
+someone else) just go to our Spekl page on GitHub, here:
+http://github.com/Spekl. Find your repo and do a normal ``git clone``
+as with any other Git repository. Note however that you should not do
+an explicit ``git push`` -- rely on ``spm publish`` do do that work
+for you. 
+
+
+.. _q-broken:
+
+Help! Something is Broken! Spekl Isn't Working, etc
+----------------------------------------------------
+The first thing you should always do is delete the ``.spm`` directory
+and try installing with ``spm install`` again. If that doesn't work,
+please open an issue over on our GitHub `Issue Tracker <https://github.com/jsinglet/spekl-package-manager/issues>`_.
