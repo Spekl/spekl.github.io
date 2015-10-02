@@ -263,7 +263,7 @@ See the `Interning Checker Documentation <http://types.cs.washington.edu/checker
 CheckLT: Taint Checking for Mere Mortals
 =================
 
-.. image:: http://checklt.github.io/images/chick-l.png
+.. image:: http://cs.ucf.edu/~jls/images/checklt.b090a802.png
 	   :align: right
 
 
