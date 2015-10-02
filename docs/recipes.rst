@@ -260,4 +260,36 @@ See the `Interning Checker Documentation <http://types.cs.washington.edu/checker
   		
 
 
+CheckLT
+=================
+
+.. image:: http://types.cs.washington.edu/checker-framework/current/CFLogo.png
+	   :align: right
+
+
+CheckLT is a program verification tool for Java which can help you use taint tracking to find defects in your software. CheckLT provides an easy to install verification toolset, a simple, non-invasive syntax for annotating programs, and a dynamically configurable security lattice.
+
+More About this Tool:
+
+- `CheckLT Homepage <http://checklt.github.io/>`_
+
+
+Note that this checker supports an optional ``classpath`` element,
+which is a list of paths to add to the classpath. Also, if you do not
+want your class files written to the same directory in which they
+reside, you may use the ``out`` option to specify an output
+directory. Note that it must exist before running ``spm check``.
+
+Note that for this to work, you must define a ``security.xml`` in the root directory of your project as described by the CheckLT documentation. 
+
+.. code-block:: yaml
+
+  checks :                                                                                                 
+    - name        : checklt
+      description : "CheckLT Lattice Tainting Check"                                                                 
+      paths       : [MaybeAdd.java]                                                                        
+                                                                                                           
+      tool:                                                                                                
+        name      : checklt                                                                            
+  
 
