@@ -260,7 +260,7 @@ See the `Interning Checker Documentation <http://types.cs.washington.edu/checker
   		
 
 
-CheckLT
+CheckLT : Taint Checking for Mere Mortals
 =================
 
 .. image:: http://types.cs.washington.edu/checker-framework/current/CFLogo.png
