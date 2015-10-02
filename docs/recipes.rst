@@ -260,8 +260,12 @@ See the `Interning Checker Documentation <http://types.cs.washington.edu/checker
   		
 
 
-CheckLT : Taint Checking for Mere Mortals
+CheckLT: Taint Checking for Mere Mortals
 =================
+
+.. image:: http://checklt.github.io/images/chick-l.png
+	   :align: right
+
 
 CheckLT is a program verification tool for Java which can help you use taint tracking to find defects in your software. CheckLT provides an easy to install verification toolset, a simple, non-invasive syntax for annotating programs, and a dynamically configurable security lattice.
 
