@@ -5,8 +5,7 @@ Frequently Asked Questions
 
 .. _q-windows:
 
-I just installed Spekl but it's not appearing on my path. Do I need to
-manually add it?
+I just installed Spekl but it's not appearing on my path. Do I need to manually add it?
 -------------------------------------------------------------------------------
 Spekl's installer automatically adds the path to ``spm`` to your
 path. On platforms like Windows and OSX, the easiest way to refresh
