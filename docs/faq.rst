@@ -3,6 +3,26 @@
 Frequently Asked Questions
 ============================
 
+.. _q-windows:
+
+I just installed Spekl but it's not appearing on my path. Do I need to
+manually add it?
+-------------------------------------------------------------------------------
+Spekl's installer automatically adds the path to ``spm`` to your
+path. On platforms like Windows and OSX, the easiest way to refresh
+your path is to restart the shell you use (CMD.EXE or Cygwin,
+Terminal.app, etc). This should enable you to use the ``spm`` tool on
+the command line. On Linux platforms the path is not automatically
+updated and must be added to your ``.profile`` or shell init
+scripts. In case the automatic path modification doesn't work (or if
+you are on Linux), the following list below details where Spekl is
+installed on various platforms:
+
+- Windows: ``C:\Program Files (x86)\spm``
+- OSX: ``/Applications/spm``
+- Linux: ``/opt/spm``
+
+
 .. _q-update-auth:
 
 I need to update my publishing information/authentication info, how do I do it?
