@@ -241,13 +241,7 @@ The output from the check will look like the following::
   .\MaybeAdd.java:5: warning: Associated declaration: .\MaybeAdd.java:7:
       //@ ensures  0 < \result;
           ^
-  .\MaybeAdd.java:13: warning: The prover cannot establish an assertion (Precondition: .\MaybeAdd.java:3: ) in method main
-          System.out.println(MaybeAdd.add(1,2));
-                                         ^
-  .\MaybeAdd.java:3: warning: Associated declaration: .\MaybeAdd.java:13:
-      //@ requires 0 < a && a < 1000;
-          ^
-  4 warnings
+  2 warnings
   
 
 As you can see in the output above, the extended static checker has
